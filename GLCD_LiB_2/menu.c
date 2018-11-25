@@ -309,8 +309,15 @@ void draw_menu(void)
 
 //  u8g_SetFont(&u8g, u8g_font_5x7);
   u8g_SetFontRefHeightText(&u8g);
+  u8g_SetDefaultForegroundColor(&u8g);
+
   u8g_SetFontPosTop(&u8g);
+
+
+
+
   u8g_DrawStr(&u8g, 15, 3,"Setup Menu");
+
   h = u8g_GetFontAscent(&u8g)-u8g_GetFontDescent(&u8g);
   w = u8g_GetWidth(&u8g);
   for( i = 0; i < MENU_ITEMS; i++ )
@@ -344,6 +351,8 @@ void draw_home_menu(void)
 //	u8g_prepare();
 
   u8g_SetFontRefHeightText(&u8g);
+  u8g_SetDefaultForegroundColor(&u8g);
+
   u8g_SetFontPosTop(&u8g);
 
 
@@ -376,6 +385,7 @@ void draw_coin_menu(void)
   u8g_uint_t w, d;
 
   u8g_SetFontRefHeightText(&u8g);
+  u8g_SetDefaultForegroundColor(&u8g);
   u8g_SetFontPosTop(&u8g);
   u8g_DrawStr(&u8g, 15, 3,"Share Coins Menu");
   h = u8g_GetFontAscent(&u8g)-u8g_GetFontDescent(&u8g);
@@ -513,6 +523,25 @@ int main(void)
 	u8g_setup();
 	menu_redraw_required = 1;
 	u8g_prepare();
+
+
+//
+//	for(;;)
+//	{
+//		sys_debounce_key();
+//		u8g_FirstPage(&u8g);
+//		if (menu_redraw_required == 1)
+//		{
+//			do{
+//				draw_menu();
+//				}while ( u8g_NextPage(&u8g) );
+//			menu_redraw_required = 0;
+//		}
+//		item_selected = update_menu();
+//		u8g_Delay(10);
+//	}
+
+
 
 	for(;;)
 	{
