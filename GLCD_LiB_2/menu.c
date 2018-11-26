@@ -174,7 +174,15 @@ void sys_setup_keys(void)
 void u8g_prepare(void) {
 
   sys_setup_keys();
-  u8g_SetFont(&u8g, u8g_font_5x8r);
+
+
+  u8g_SetFont(&u8g, u8g_font_profont10);
+
+//  u8g_font_fixed_v0 //u8g_font_timB08 //u8g_font_timR08
+//  u8g_font_lucasfont_alternate //u8g_font_lucasfont_alternater
+//  u8g_font_chikita // u8g_font_profont10
+
+//  u8g_SetFont(&u8g, u8g_font_5x8);
   u8g_SetFontRefHeightExtendedText(&u8g);
   u8g_SetDefaultForegroundColor(&u8g);
   u8g_SetFontPosTop(&u8g);
@@ -231,6 +239,7 @@ void u8g_ascii_2(void) {
 
 void U8g_welcom(void)
 {
+//
 
 	  u8g_DrawStr(&u8g,50,15, "Welcome");
 	  u8g_DrawStr(&u8g,40,31, "Embeddedfab");
