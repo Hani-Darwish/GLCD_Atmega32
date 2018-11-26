@@ -44,10 +44,10 @@
 /* structure has the addresses of UART Registers */
 const UART_reg_str uart_reg = {&UDR,&UCSRA,&UCSRB,&UCSRC,&UBRRH,&UBRRL};
 
-static volatile uint8_t  UART_RxBuf[UART_RX_BUFFER_SIZE];
-static volatile uint8_t  UART_LastRxError;
-static volatile uint16_t UART_RxHead;
-static volatile uint16_t UART_RxTail;
+//static volatile uint8_t  UART_RxBuf[UART_RX_BUFFER_SIZE];
+//static volatile uint8_t  UART_LastRxError;
+//static volatile uint16_t UART_RxHead;
+//static volatile uint16_t UART_RxTail;
 /****************************************************************************
 * Function    : EF_void_UART_Init
 *
@@ -59,8 +59,8 @@ static volatile uint16_t UART_RxTail;
 ******************************************************************************/
 void EF_void_UART_Init(UART_cfg_str *uart_cfg)
 {
-    UART_RxHead = 0;
-    UART_RxTail = 0;
+//    UART_RxHead = 0;
+//    UART_RxTail = 0;
 
 
 	/* variable helps in calculating Baud rate */
@@ -319,61 +319,9 @@ void EF_void_UART_SendString(char *array)
 
 
 
-int16_t readFromUART()
-{
-    uint16_t tmptail;
-    uint8_t  data;
 
 
-    if ( UART_RxHead == UART_RxTail )
-    {
-        return UART_NO_DATA;   /* no data  */
-    }
 
-    /* calculate /store buffer index */
-    tmptail = (UART_RxTail + 1) & UART_RX_BUFFER_MASK;
-    UART_RxTail = tmptail;
-//    #ifdef PLUS_BOARD
-    if (((UART_RxTail + 1) & UART_RX_BUFFER_MASK)== UART_RxHead)
-    {
-        isArduinoRXBufferEmpty = TRUE;
-    }
-//    #endif
-    /* get data from receive buffer */
-    data = UART_RxBuf[tmptail];
-
-    return (UART_LastRxError << 8) + data;
-}
-
-
-int16_t getAvailableDataCountOnUART()
-{
-    int16_t returnedValue = 0;
-
-    returnedValue =  (UART_RX_BUFFER_SIZE + UART_RxHead - UART_RxTail) & UART_RX_BUFFER_MASK;
-
-#ifdef DEBUG_UART_C
-    EF_void_UART_SendArray ( (U8_t *)"head :" , 6);
-    EF_void_UART_Send_Integer(UART_RxHead);
-    EF_void_UART_SendNewLine();
-
-    EF_void_UART_SendArray ( (U8_t *)"tail :" , 6);
-    EF_void_UART_Send_Integer(UART_RxTail);
-    EF_void_UART_SendNewLine();
-
-    EF_void_UART_SendArray ( (U8_t *)"return :" , 8);
-    EF_void_UART_Send_Integer(returnedValue);
-    EF_void_UART_SendNewLine();
-#endif
-
-    return  returnedValue;
-}
-
-
-void setIsArduinoRXBufferEmptyFlag(uint8_t state)
-{
-    isArduinoRXBufferEmpty = state;
-}
 
 
 uint8_t getIsArduinoRXBufferOverFlowedFlag()
@@ -385,42 +333,3 @@ void setIsArduinoRXBufferOverFlowedFlag(uint8_t state)
 {
     isArduinoRXBufferOverFlowed = state;
 }
-
-ISR(USART_RXC_vect)
-{
-   uint16_t tmphead;
-   uint8_t data;
-   uint8_t lastRxError;
-
-   data = UDR;
-   lastRxError = (UCSRA & (_BV(FE)|_BV(DOR)) );
-
-   /* calculate buffer index */
-   tmphead = ( UART_RxHead + 1) & UART_RX_BUFFER_MASK;
-//   #ifdef PLUS_BOARD
-   if ((((tmphead + 128) & UART_RX_BUFFER_MASK)== UART_RxTail))
-   {
-       isArduinoRXBufferEmpty = FALSE;
-   }
-//   #endif
-
-   if ( tmphead == UART_RxTail )
-   {
-       /* error: receive buffer overflow */
-       lastRxError = UART_BUFFER_OVERFLOW >> 8;
-//       #ifdef PLUS_BOARD
-       isArduinoRXBufferOverFlowed = TRUE;
-//       #endif
-   }
-   else
-   {
-
-       /* store new index */
-       UART_RxHead = tmphead;
-       /* store received data in buffer */
-       UART_RxBuf[tmphead] = data;
-   }
-   UART_LastRxError = lastRxError;
-}
-
-

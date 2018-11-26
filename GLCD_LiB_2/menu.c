@@ -44,6 +44,7 @@
 #include "util/delay.h"
 
 #include "MCAL/EF_UART.h"
+
 #include "menu.h"
 
 
@@ -64,7 +65,7 @@
 
 
 
-static char tools_28_bits[] U8G_PROGMEM = {
+static char tools_28_bits[]  U8G_PROGMEM  = {
   0x00, 0x00, 0x0E, 0x00, 0x00, 0x80, 0x0F, 0x00, 0x04, 0xC0, 0x0F, 0x00,
   0x0E, 0xE0, 0x07, 0x00, 0x1F, 0xE0, 0x03, 0x00, 0x3F, 0xF0, 0x03, 0x00,
   0x3E, 0xF0, 0x03, 0x00, 0x7C, 0xF0, 0x03, 0x00, 0xF0, 0xF0, 0x03, 0x0E,
@@ -178,6 +179,7 @@ void u8g_prepare(void) {
 
   u8g_SetFont(&u8g, u8g_font_profont10);
 
+
 //  u8g_font_fixed_v0 //u8g_font_timB08 //u8g_font_timR08
 //  u8g_font_lucasfont_alternate //u8g_font_lucasfont_alternater
 //  u8g_font_chikita // u8g_font_profont10
@@ -255,7 +257,6 @@ uint8_t sys_get_key(void)
 {
   uint8_t volatile result = KEY_NONE;
 
-//  cli();
 
 #if defined(__AVR__)
   if ( (PIND & (1<<5)) == 0 )
@@ -455,64 +456,6 @@ char update_menu(void)
 
 	return key_selected;
 
-
-
-//		switch(menu_current)
-//		{
-//		case 0:
-//			u8g_FirstPage(&u8g);
-//			do{
-//				u8g_DrawStr(&u8g,30,5, "Memory Card");
-//				u8g_DrawXBMP(&u8g,50,25,28,28,memory_card_28_bits);
-//
-//
-//			}while ( u8g_NextPage(&u8g) );
-//			break;
-//
-//		case 1:
-//
-//			u8g_FirstPage(&u8g);
-//			do{
-//				  u8g_DrawStr(&u8g,45,5,"Tool");
-//				  u8g_DrawXBMP(&u8g,45,25,28,28,tools_28_bits);
-//			}while ( u8g_NextPage(&u8g) );
-//
-//			break;
-//
-//		case 3:
-//
-//
-////			 sys_setup_keys();
-////			  u8g_SetFont(&u8g, u8g_font_5x8r);
-//			  u8g_SetFontRefHeightExtendedText(&u8g);
-//			  u8g_SetDefaultForegroundColor(&u8g);
-////			  u8g_SetFontPosTop(&u8g);
-//			u8g_FirstPage(&u8g);
-//			do{
-//				  u8g_DrawStr(&u8g,35,15,"Please Wait...");
-//				  u8g_DrawStr(&u8g,15,25,"check authentication ");
-//				  /* check the authentication here */
-//				  _delay_ms(100);
-//				  u8g_DrawStr(&u8g,35,45,"User Verified");
-//				  homeDisplay_flag = 1;
-//
-//
-//			}while ( u8g_NextPage(&u8g) );
-//			break;
-//
-//
-//		case 2:
-//			u8g_FirstPage(&u8g);
-//			do{
-//				 u8g_DrawStr(&u8g,40,5,"Clock");
-//				 u8g_DrawXBMP(&u8g,40,25,28,28,clock_28_bits);
-//			}while ( u8g_NextPage(&u8g) );
-
-
-//
-//			break;
-//
-//		}/* end inner SW  */
 
 
 }

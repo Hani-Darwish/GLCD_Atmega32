@@ -356,129 +356,6 @@ extern u8g_dev_t u8g_dev_st7920_202x32_4x_sw_spi;
 extern u8g_dev_t u8g_dev_st7920_202x32_4x_hw_spi;
 extern u8g_dev_t u8g_dev_st7920_202x32_4x_8bit;
 
-/* LC7981 160x80 display */
-extern u8g_dev_t u8g_dev_lc7981_160x80_8bit;
-/* LC7981 240x64 display */
-extern u8g_dev_t u8g_dev_lc7981_240x64_8bit;
-/* LC7981 240x128 display */
-extern u8g_dev_t u8g_dev_lc7981_240x128_8bit;
-/* LC7981 320x64 display */
-extern u8g_dev_t u8g_dev_lc7981_320x64_8bit;
-
-/* T6963, all t6963 devices have double page (2x) */
-extern u8g_dev_t u8g_dev_t6963_240x128_8bit;
-extern u8g_dev_t u8g_dev_t6963_128x128_8bit;
-extern u8g_dev_t u8g_dev_t6963_240x64_8bit;
-extern u8g_dev_t u8g_dev_t6963_128x64_8bit;
-
-/* Display: EA DOGXL160, Size: 160x104 monochrom & gray level */
-extern u8g_dev_t u8g_dev_uc1610_dogxl160_bw_sw_spi;
-extern u8g_dev_t u8g_dev_uc1610_dogxl160_bw_hw_spi;
-extern u8g_dev_t u8g_dev_uc1610_dogxl160_gr_sw_spi;
-extern u8g_dev_t u8g_dev_uc1610_dogxl160_gr_hw_spi;
-
-extern u8g_dev_t u8g_dev_uc1610_dogxl160_2x_bw_sw_spi;
-extern u8g_dev_t u8g_dev_uc1610_dogxl160_2x_bw_hw_spi;
-extern u8g_dev_t u8g_dev_uc1610_dogxl160_2x_gr_sw_spi;
-extern u8g_dev_t u8g_dev_uc1610_dogxl160_2x_gr_hw_spi;
-
-/* Display: Generic KS0108b, Size: 128x64 monochrom */
-extern u8g_dev_t u8g_dev_ks0108_128x64;         /* official Arduino Library interface */
-extern u8g_dev_t u8g_dev_ks0108_128x64_fast;    /* faster, but uses private tables from the Arduino Library */
-
-/* Nokia 84x48 Display with PCD8544 */
-extern u8g_dev_t u8g_dev_pcd8544_84x48_sw_spi;
-extern u8g_dev_t u8g_dev_pcd8544_84x48_hw_spi;
-extern u8g_dev_t u8g_dev_tls8204_84x48_sw_spi;
-
-/* Nokia 96x65 Display with PCF8812 */
-extern u8g_dev_t u8g_dev_pcf8812_96x65_sw_spi;
-extern u8g_dev_t u8g_dev_pcf8812_96x65_hw_spi;
-
-/* NHD-2.7-12864UCY3 OLED Display with SSD1325 Controller */
-extern u8g_dev_t u8g_dev_ssd1325_nhd27oled_bw_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1325_nhd27oled_bw_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1325_nhd27oled_bw_parallel;
-extern u8g_dev_t u8g_dev_ssd1325_nhd27oled_gr_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1325_nhd27oled_gr_hw_spi;
-
-extern u8g_dev_t u8g_dev_ssd1325_nhd27oled_2x_bw_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1325_nhd27oled_2x_bw_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1325_nhd27oled_2x_bw_parallel;
-extern u8g_dev_t u8g_dev_ssd1325_nhd27oled_2x_gr_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1325_nhd27oled_2x_gr_hw_spi;
-
-/* LY120 OLED with SSD1327 Controller (tested with Seeedstudio module) */
-extern u8g_dev_t u8g_dev_ssd1327_96x96_gr_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1327_96x96_gr_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1327_96x96_gr_i2c;
-
-extern u8g_dev_t u8g_dev_ssd1327_96x96_2x_gr_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1327_96x96_2x_gr_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1327_96x96_2x_gr_i2c;
-
-/* NHD-3.12-25664 OLED Display with SSD1322 Controller */
-extern u8g_dev_t u8g_dev_ssd1322_nhd31oled_bw_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1322_nhd31oled_bw_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1322_nhd31oled_bw_parallel;
-extern u8g_dev_t u8g_dev_ssd1322_nhd31oled_2x_bw_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1322_nhd31oled_2x_bw_hw_spi;
-
-extern u8g_dev_t u8g_dev_ssd1322_nhd31oled_gr_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1322_nhd31oled_gr_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1322_nhd31oled_gr_parallel;
-extern u8g_dev_t u8g_dev_ssd1322_nhd31oled_2x_gr_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1322_nhd31oled_2x_gr_hw_spi;
-
-/* OLED 128x64 Display with SSD1306 Controller */
-extern u8g_dev_t u8g_dev_ssd1306_128x64_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_128x64_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_128x64_i2c;
-
-extern u8g_dev_t u8g_dev_ssd1306_adafruit_128x64_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_adafruit_128x64_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_adafruit_128x64_i2c;
-
-extern u8g_dev_t u8g_dev_ssd1306_128x64_2x_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_128x64_2x_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_128x64_2x_i2c;
-
-/* OLED 128x64 Display with SH1106 Controller */
-extern u8g_dev_t u8g_dev_sh1106_128x64_sw_spi;
-extern u8g_dev_t u8g_dev_sh1106_128x64_hw_spi;
-extern u8g_dev_t u8g_dev_sh1106_128x64_i2c;
-
-extern u8g_dev_t u8g_dev_sh1106_128x64_2x_sw_spi;
-extern u8g_dev_t u8g_dev_sh1106_128x64_2x_hw_spi;
-extern u8g_dev_t u8g_dev_sh1106_128x64_2x_i2c;
-
-/* OLED 128x64 Display with SSD1309 Controller */
-extern u8g_dev_t u8g_dev_ssd1309_128x64_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1309_128x64_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1309_128x64_i2c;
-
-/* OLED 128x32 Display with SSD1306 Controller */
-extern u8g_dev_t u8g_dev_ssd1306_128x32_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_128x32_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_128x32_i2c;
-
-extern u8g_dev_t u8g_dev_ssd1306_128x32_2x_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_128x32_2x_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_128x32_2x_i2c;
-
-/* OLED 64x48 Display with SSD1306 Controller */
-extern u8g_dev_t u8g_dev_ssd1306_64x48_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_64x48_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_64x48_i2c;
-
-extern u8g_dev_t u8g_dev_ssd1306_64x48_2x_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_64x48_2x_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1306_64x48_2x_i2c;
-
-/* OLED 60x32 Display with LD7032 Controller */
-extern u8g_dev_t u8g_dev_ld7032_60x32_sw_spi;
-extern u8g_dev_t u8g_dev_ld7032_60x32_hw_spi;
-extern u8g_dev_t u8g_dev_ld7032_60x32_parallel;
 
 /* experimental 65K TFT with st7687 controller */
 extern u8g_dev_t u8g_dev_st7687_c144mvgd_sw_spi;
@@ -493,37 +370,6 @@ void u8g_SetFlipDiscCallback(u8g_t *u8g, void (*cb)(uint8_t id, uint8_t page, ui
 
 /* ILI9325D based TFT */
 extern u8g_dev_t u8g_dev_ili9325d_320x240_8bit;
-
-
-/* SSD1351 OLED (breakout board from http://www.kickstarter.com/projects/ilsoftltd/colour-oled-breakout-board) */
-extern u8g_dev_t u8g_dev_ssd1351_128x128_332_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128_332_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128_4x_332_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128_4x_332_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128_idx_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128_idx_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128_hicolor_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128_hicolor_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128_4x_hicolor_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128_4x_hicolor_hw_spi;
-
-/* SSD1351 OLED (Freetronics, GPIOs set to high level) */
-extern u8g_dev_t u8g_dev_ssd1351_128x128gh_332_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128gh_332_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128gh_4x_332_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128gh_4x_332_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128gh_hicolor_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128gh_hicolor_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128gh_4x_hicolor_sw_spi;
-extern u8g_dev_t u8g_dev_ssd1351_128x128gh_4x_hicolor_hw_spi;
-
-
-/* SSD1353 OLED Palmtronics */
-extern u8g_dev_t u8g_dev_ssd1353_160x128_332_hw_spi;
-extern u8g_dev_t u8g_dev_ssd1353_160x128_hicolor_hw_spi;
-
-/* HT1632 */
-extern u8g_dev_t u8g_dev_ht1632_24x16;
 
 /* A2 Micro Printer */
 extern u8g_dev_t u8g_dev_a2_micro_printer_384x240;
@@ -672,7 +518,7 @@ uint8_t u8g_com_arduino_st7920_hw_spi_fn(u8g_t *u8g, uint8_t msg, uint8_t arg_va
 uint8_t u8g_com_arduino_parallel_fn(u8g_t *u8g, uint8_t msg, uint8_t arg_val, void *arg_ptr);           /* u8g_com_arduino_parallel.c */
 uint8_t u8g_com_arduino_fast_parallel_fn(u8g_t *u8g, uint8_t msg, uint8_t arg_val, void *arg_ptr);      /* u8g_com_arduino_fast_parallel.c */
 uint8_t u8g_com_arduino_port_d_wr_fn(u8g_t *u8g, uint8_t msg, uint8_t arg_val, void *arg_ptr);       /* u8g_com_arduino_port_d_wr.c */
-uint8_t u8g_com_arduino_no_en_parallel_fn(u8g_t *u8g, uint8_t msg, uint8_t arg_val, void *arg_ptr);	/* u8g_com_arduino_no_en_parallel.c */		
+uint8_t u8g_com_arduino_no_en_parallel_fn(u8g_t *u8g, uint8_t msg, uint8_t arg_val, void *arg_ptr);	/* u8g_com_arduino_no_en_parallel.c */
 uint8_t u8g_com_arduino_ssd_i2c_fn(u8g_t *u8g, uint8_t msg, uint8_t arg_val, void *arg_ptr);		/* u8g_com_arduino_ssd_i2c.c */
 uint8_t u8g_com_arduino_uc_i2c_fn(u8g_t *u8g, uint8_t msg, uint8_t arg_val, void *arg_ptr);
 uint8_t u8g_com_arduino_t6963_fn(u8g_t *u8g, uint8_t msg, uint8_t arg_val, void *arg_ptr);			/* u8g_com_arduino_t6963.c */
@@ -889,13 +735,6 @@ uint8_t u8g_WriteSequenceP(u8g_t *u8g, u8g_dev_t *dev, uint8_t cnt, const uint8_
 #define U8G_ESC_255 255, 255
 //uint8_t u8g_WriteEscSeqP(u8g_t *u8g, u8g_dev_t *dev, u8g_pgm_uint8_t *esc_seq);
 uint8_t u8g_WriteEscSeqP(u8g_t *u8g, u8g_dev_t *dev, const uint8_t *esc_seq);
-
-
-/* u8g_com_api_16gr.c */
-uint8_t u8g_WriteByteBWTo16GrDevice(u8g_t *u8g, u8g_dev_t *dev, uint8_t b);
-uint8_t u8g_WriteSequenceBWTo16GrDevice(u8g_t *u8g, u8g_dev_t *dev, uint8_t cnt, uint8_t *ptr);
-uint8_t u8g_WriteByte4LTo16GrDevice(u8g_t *u8g, u8g_dev_t *dev, uint8_t b);
-uint8_t u8g_WriteSequence4LTo16GrDevice(u8g_t *u8g, u8g_dev_t *dev, uint8_t cnt, uint8_t *ptr);
 
 
 /*===============================================================*/
